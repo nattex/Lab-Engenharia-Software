@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Pizza</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Selecione a Pizza</h1>
+        
+        <div class="search-container">
+            <h2>Buscar Pizza:</h2>
+            <form method="GET" action="{{ url_for('selecionar_pizza') }}">
+                <input type="text" name="busca" placeholder="Digite o nome da pizza" />
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <div>
+            <h2>Pizzas</h2>
+            <div class="pizza-container">
+                {% for pizza in pizzas %}
+                    <div class="pizza">
+                        <img src="{{ url_for('static', filename='imagens/' + pizza + '.jpg') }}" alt="{{ pizza }}" class="pizza-img">
+                        <p>{{ pizza }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+/* Container principal para a página de adicionar ingredientes */
+.container {
+    background-color: #f9f9f9;  /* Cor de fundo suave */
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);  /* Sombra sutil para um visual elegante */
+    width: 600px;  /* Definindo largura fixa */
+    margin: 50px auto;  /* Centralizando na página */
+    text-align: left;  /* Texto alinhado à esquerda */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilo para o título */
+.container h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;  /* Título centralizado */
+    font-weight: bold;
+}
+
+/* Estilos para os rótulos dos campos */
+.container label {
+    font-size: 16px;
+    color: #444;
+    font-weight: 600;
+    display: block;  /* Força uma nova linha */
+    margin-bottom: 8px;
+}
+
+/* Estilo para os campos de entrada */
+.container input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+/* Efeito de foco nos campos de entrada */
+.container input:focus {
+    border-color: #007bff;  /* Azul corporativo */
+    outline: none;
+}
+
+/* Botão principal e de ações */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    background-color: #007bff;  /* Azul corporativo */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 48%;  /* Definindo largura para alinhamento */
+    transition: background-color 0.3s;
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.button-group button:hover {
+    background-color: #0056b3;  /* Tom mais escuro de azul */
+}
+
+/* Estilo para os contêineres de quantidade */
+.quantidade-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Ajustes para os campos de quantidade */
+.quantidade-field {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.quantidade-field:last-child {
+    margin-right: 0;  /* Remove o espaçamento direito do último item */
+}
