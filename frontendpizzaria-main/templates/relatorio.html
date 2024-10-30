@@ -1,0 +1,23 @@
+<!-- relatorio.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Receita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_relatorio.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório de Receitas</h1>
+        
+        {% if mensagem %}
+            <p style="color: {{ cor_mensagem }}">{{ mensagem }}</p>
+        {% else %}
+            <p>Nenhuma informação disponível.</p>
+        {% endif %}
+        
+        <button onclick="window.location.href='/receitas'">Voltar para Receitas</button>
+    </div>
+</body>
+</html>

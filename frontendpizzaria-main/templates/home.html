@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-Vindo - Controle de Estoque</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> <!-- Seu arquivo CSS -->
+</head>
+<body>
+    <div class="container">
+        <img src="{{ url_for('static', filename='imagens/animacao.jpg') }}" alt="Logo da Pizzaria" style="max-width: 40%; height: auto;">
+        
+        <h1>Bem-Vindo!</h1>
+        <h2>Controle de Estoque da Pizzaria!</h2>
+        <p>Clique nos botões abaixo para começar sua gestão</p>
+        <button onclick="window.location.href='/adicionar'">Gestão Estoque</button>
+        <button onclick="window.location.href='/receitas'">Conferir Receitas</button>
+    </div>
+
+    <!-- Card flutuante -->
+    <div class="floating-card" id="reabastecerCard">
+        <h3>Hora de reabastecer o estoque!</h3>
+        <p>O mês está acabando não esqueça de verificar os produtos que estão acabando.</p>
+        <button onclick="window.location.href='/estoque'">Ver Estoque</button>
+    </div>
+
+    <script>    
+        // Função para verificar se é duas semanas antes do final do mês
+        function checkEndOfMonth() {
+        const today = new Date();
+        const lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+        const twoWeeksBeforeLastDay = new Date(lastDayOfMonth);
+        twoWeeksBeforeLastDay.setDate(lastDayOfMonth.getDate() - 14); // Subtrai 14 dias do último dia do mês
+
+        // Se hoje está entre duas semanas antes do último dia e o último dia do mês
+        if (today >= twoWeeksBeforeLastDay && today <= lastDayOfMonth) {
+            document.getElementById('reabastecerCard').style.display = 'block'; // Exibe o card
+            }
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = checkEndOfMonth;
+
+    </script>
+</body>
+</html>
