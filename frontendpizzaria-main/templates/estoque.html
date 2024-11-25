@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - Pizzaria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_estoque.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Estoque Atual</h1>
+        <ul id="listaEstoque">
+            {% if estoque %}
+                {% for item in estoque %}
+                    <li>
+                        <strong>Produto:</strong> {{ item.nome }}<br>
+                        <strong>Unidades:</strong> {{ item.unidade }}<br>
+                        <strong>Quilos:</strong> {{ item.quilos }} kg<br>
+                        <strong>Quantidade Total:</strong> {{ item.quantidade }}
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>Nenhum item no estoque.</li>
+            {% endif %}
+        </ul>
+        
+        <button onclick="window.location.href='/'">Voltar</button>
+    </div>
+</body>
+</html>

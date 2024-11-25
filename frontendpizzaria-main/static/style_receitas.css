@@ -1,0 +1,104 @@
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+}
+
+.pedidos-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin: 50px auto;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+}
+
+.pedidos-container h1 {
+    color: #333;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.pedido {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    
+}
+
+.pedido h2 {
+    color: #444;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eaeaea;
+    color: #555;
+    font-size: 16px;
+}
+
+ul li:last-child {
+    border-bottom: none;
+}
+
+button {
+    display: block;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    margin: 30px auto 0;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:focus {
+    outline: none;
+}
+
+.sugestao-card {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #707172;
+    color: #e7e7e7;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    display: none; /* Inicialmente oculto */
+}
+
+.sugestao-card h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sugestao-card p {
+    margin: 5px 0;
+    font-size: 16px;
+}

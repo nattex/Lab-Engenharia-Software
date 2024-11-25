@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - Pizzaria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_pedidos.css') }}">
+    <script>
+        function toggleIngredientes(id) {
+            var ingredientesList = document.getElementById('ingredientes-' + id);
+            var link = document.getElementById('link-' + id);
+            if (ingredientesList.style.display === 'none') {
+                ingredientesList.style.display = 'block';
+                link.textContent = 'Ocultar Ingredientes';
+            } else {
+                ingredientesList.style.display = 'none';
+                link.textContent = 'Mostrar Ingredientes';
+            }
+        }
+    </script>
+</head>
+<body>    
+    <div class="container pedidos-container">
+        <h1>Pedidos</h1>
+        <button class="button-right" onclick="window.location.href='/receitas'">Conferir Todas Receitas</button>
+        <br><br><br>
+        {% if pedidos %}
+            {% for pedido in pedidos %}
+                <div class="pedido">
+                    <h2>Pedido ID: {{ pedido.pedidoId }}</h2>
+                    <p><strong>Cliente:</strong> {{ pedido.cliente }}</p>
+                    <p><strong>Data do Pedido:</strong> {{ pedido.dataPedido }}</p>
+                    <ul>
+                        {% for item in pedido.itens %}
+                            <li>
+                                <strong>Nome da Receita:</strong> {{ item.receita.nomeReceita }} <br>
+                                
+                                <a href="javascript:void(0);" id="link-{{ item.receita.receitaId }}" class="link-button" onclick="toggleIngredientes({{ item.receita.receitaId }})">Mostrar Ingredientes</a> <br>
+                                
+                                <ul id="ingredientes-{{ item.receita.receitaId }}" style="display: none;">
+                                    {% for ingrediente in item.receita.ingredientes %}
+                                        <li>{{ ingrediente }}</li>
+                                    {% endfor %}
+                                </ul>
+
+                                <strong>Preço Unitário:</strong> R$ {{ item.precoUnitario }} <br>
+                                <strong>Quantidade:</strong> {{ item.quantidade }} <br>
+                                <strong>Preço Total:</strong> R$ {{ item.precoTotal }} <br>
+                                <button class="verificar-receita" onclick="window.location.href='/relatorio?receitaId={{ item.receita.receitaId }}'">Verificar receita</button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <p><strong>Valor Total do Pedido:</strong> R$ {{ pedido.valorTotal }}</p>                    
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="pedido">
+                <p>Nenhum pedido encontrado.</p>
+            </div>
+        {% endif %}
+
+        <button onclick="window.location.href='/'">Voltar</button>
+    </div>
+</body>
+</html>
