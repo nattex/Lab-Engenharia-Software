@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "faa010b7-2890-4b96-8e4e-47495764d321",
+		"name": "PIZZARIA RENDER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27307668"
+	},
+	"item": [
+		{
+			"name": "criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Tomate\",\r\n    \"unidade\": 5,\r\n    \"quilos\": 1.5,\r\n    \"quantidade\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/estoque",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"estoque"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "criar receita",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeReceita\": \"Pizza Calabresa\",\r\n    \"ingredientes\": [\"Farinha\", \"Queijo\", \"Tomate\", \"Calabresa\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/receita/criar",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"receita",
+						"criar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar receita",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/receita",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"receita"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Mussarela\",\r\n    \"unidade\": 10,\r\n    \"quilos\": 5.3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/estoque/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"estoque",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/estoque/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"estoque",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/estoque",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"estoque"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "verificar-ingredientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/receita/verificar-ingredientes?receitaId=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"receita",
+						"verificar-ingredientes"
+					],
+					"query": [
+						{
+							"key": "receitaId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "receitas-sugeridas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/receita/receitas-sugeridas",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"receita",
+						"receitas-sugeridas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editar Receita",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeReceita\": \"Pizza de Calabresa Especial\",\r\n  \"ingredientes\": [\"Calabresa\", \"Queijo\", \"Molho de Tomate\", \"Orégano\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/receita/editar/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"receita",
+						"editar",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletar Receita",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/receita/deletar/2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"receita",
+						"deletar",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://backendpizzaria-jw9a.onrender.com",
+			"type": "string"
+		}
+	]
+}
